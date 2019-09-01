@@ -1,13 +1,17 @@
 {
-  "name": "WhoSitsWhere",
+  "name": "who-sits-where",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "react-native start",
-    "run:android": "react-native run-android",
-    "build:android": "cd android && ./gradlew assembleRelease",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "bundle:android": "cd android && ./gradlew assembleRelease",
+    "build:android": "react-native run-android --variant=release",
+    "android-emulator": "emulator -avd Pixel2XL -gpu on -memory 4096",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "react": "16.8.6",
