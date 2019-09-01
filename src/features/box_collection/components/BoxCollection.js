@@ -1,9 +1,14 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 
 import {Common} from '../../../styles';
 
 const styles = StyleSheet.create({
+  grid: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
   light: {
     backgroundColor: 'powderblue',
     ...Common.box,
@@ -23,20 +28,32 @@ const styles = StyleSheet.create({
   },
 });
 
-const BoxCollection = () => {
-  return (
-    <React.Fragment>
-      <View style={styles.bright}>
-        <Text style={styles.text}>Abhijith</Text>
+class BoxCollection extends Component {
+  render() {
+    let users = {
+      1: 'Abhijith',
+      2: 'Fairooz',
+      3: 'Lijin',
+    };
+    const {order} = this.props;
+    return (
+      <View style={styles.grid}>
+        <View style={styles.bright}>
+          <Text style={styles.text}>{users[order % 10]}</Text>
+        </View>
+        <View style={styles.sky}>
+          <Text style={styles.text}>
+            {users[parseInt(order / 10, 10) % 10]}
+          </Text>
+        </View>
+        <View style={styles.light}>
+          <Text style={styles.text}>
+            {users[parseInt(order / 100, 10) % 10]}
+          </Text>
+        </View>
       </View>
-      <View style={styles.sky}>
-        <Text style={styles.text}>Lijin</Text>
-      </View>
-      <View style={styles.light}>
-        <Text style={styles.text}>Fairooz</Text>
-      </View>
-    </React.Fragment>
-  );
-};
+    );
+  }
+}
 
 export default BoxCollection;
