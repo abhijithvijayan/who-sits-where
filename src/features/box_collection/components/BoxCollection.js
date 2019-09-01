@@ -1,36 +1,20 @@
 import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 
+import {Common} from '../../../styles';
+
 const styles = StyleSheet.create({
-  main: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row',
-  },
   light: {
-    width: 75,
-    height: 75,
     backgroundColor: 'powderblue',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    ...Common.box,
   },
   sky: {
-    width: 75,
-    height: 75,
     backgroundColor: 'skyblue',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    ...Common.box,
   },
   bright: {
-    width: 75,
-    height: 75,
     backgroundColor: 'steelblue',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    ...Common.box,
   },
   text: {
     color: 'white',
@@ -39,9 +23,9 @@ const styles = StyleSheet.create({
   },
 });
 
-const HomeScreen = () => {
+const BoxCollection = () => {
   return (
-    <View style={styles.main}>
+    <React.Fragment>
       <View style={styles.bright}>
         <Text style={styles.text}>Abhijith</Text>
       </View>
@@ -51,8 +35,8 @@ const HomeScreen = () => {
       <View style={styles.light}>
         <Text style={styles.text}>Fairooz</Text>
       </View>
-    </View>
+    </React.Fragment>
   );
 };
 
-export default HomeScreen;
+export default BoxCollection;

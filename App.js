@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, View} from 'react-native';
-import HomeScreen from './src/screens/main/HomeScreen';
+import HomeScreen from './src/navigation/navigators';
 
 const styles = StyleSheet.create({
   container: {

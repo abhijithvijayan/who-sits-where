@@ -1,8 +1,7 @@
-
 const fonts = {
   title: 'Arial',
   text: 'SanFrancisco',
-  code: 'Fira'
+  code: 'Fira',
 };
 
 export default fonts;
